@@ -164,7 +164,7 @@ public class IndusRecorderService extends AccessibilityService {
 
                         } else {
                             System.out.println("-----IN ACTIVE------");
-                           // closeAndOpenApp();
+                            closeAndOpenApp();
                             System.out.println("-----END ACTIVE------");
                         }
 
@@ -451,8 +451,15 @@ public class IndusRecorderService extends AccessibilityService {
             ticker.setNotIdle();
         }
 
-        if (targetNode5 != null && !shouldLogout) {
-            AccessibilityNodeInfo noButtonNode = findNodeByText(getTopMostParentNode(getRootInActiveWindow()), "NO", false, true);
+//        if (targetNode5 != null && !shouldLogout) {
+//            AccessibilityNodeInfo noButtonNode = findNodeByText(getTopMostParentNode(getRootInActiveWindow()), "NO", false, true);
+//            if (noButtonNode != null) {
+//                noButtonNode.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+//                noButtonNode.recycle();
+//            }
+//        }
+        if (targetNode5 != null) {
+            AccessibilityNodeInfo noButtonNode = findNodeByText(getTopMostParentNode(getRootInActiveWindow()), "YES", false, true);
             if (noButtonNode != null) {
                 noButtonNode.performAction(AccessibilityNodeInfo.ACTION_CLICK);
                 noButtonNode.recycle();
